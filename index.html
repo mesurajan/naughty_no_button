@@ -30,13 +30,13 @@
 
         yesBtn.addEventListener('click', () => {
             question.textContent = 'I LOVE YOU TOO !';
-            question.classList.add('animation-class');
+            
             setTimeout(() => {
                 question.textContent = 'WILL YOU MARRY ME?';
                 question.classList.add('animation-class');
                 yesBtn.textContent = 'Yes'; // Changed from 'Yes, I will' to 'Yes'
                 heartImage.src = 'ring.webp'; // Replace with the path to your png image
-            }, 5000);
+            }, 3000);
         });
 
         noBtn.addEventListener('mouseover', () => {
@@ -53,7 +53,7 @@
                 question.classList.add('animation-class');
                 yesBtn.textContent = 'Yes'; // Changed from 'Yes, I will' to 'Yes'
                 noBtn.textContent = 'No';
-            }, 5000);
+            }, 3000);
         });
     </script>
 </body>
