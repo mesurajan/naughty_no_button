@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Love you
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <img src="img.png" alt="love">
+        <h2 class="question">Do you love me?</h2>
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const wrapper = document.querySelector('.wrapper');
+        const question = document.querySelector('.question');
+        const yesBtn = document.querySelector('.yes-btn');
+        const noBtn = document.querySelector('.no-btn');
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const noBtnRect = noBtn.getBoundingClientRect();
+
+        yesBtn.addEventListener('click', () => {
+            question.textContent = 'I LOVE YOU TOO !'; // Changed from innerHTML to textContent
+            setTimeout(() => {
+                question.textContent = 'Will you marry me?';
+                yesBtn.textContent = 'Yes';
+                noBtn.textContent = 'No';
+            }, 3000); 
+        });
+
+        noBtn.addEventListener('mouseover', () => {
+            const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
+            const j = Math.floor(Math.random() * (wrapperRect.height - noBtnRect.height)) + 1;
+            noBtn.style.left = i + 'px';
+            noBtn.style.top = j + 'px';
+        });
+
+        noBtn.addEventListener('click', () => {
+            question.textContent = 'I LOVE YOU TOO !'; // Changed from innerHTML to textContent
+            setTimeout(() => {
+                question.textContent = 'Will you marry me?';
+                yesBtn.textContent = 'Yes';
+                noBtn.textContent = 'No';
+            }, 3000); 
+        });
+    </script>
+</body>
+</html>
