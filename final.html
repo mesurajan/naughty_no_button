@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <img src="img.png" alt="love">
+        <img id="heartImage" src="img.png" alt="love">
         <h2 class="question">Do you love me?</h2>
         <div class="btn-group">
             <button class="yes-btn">Yes</button>
@@ -21,16 +21,22 @@
         const question = document.querySelector('.question');
         const yesBtn = document.querySelector('.yes-btn');
         const noBtn = document.querySelector('.no-btn');
+        const heartImage = document.getElementById('heartImage');
         const wrapperRect = wrapper.getBoundingClientRect();
         const noBtnRect = noBtn.getBoundingClientRect();
 
+
+        document.body.style.backgroundImage = "url('love.jpg')";
+
         yesBtn.addEventListener('click', () => {
-            question.textContent = 'I LOVE YOU TOO !'; // Changed from innerHTML to textContent
+            question.textContent = 'I LOVE YOU TOO !';
+            question.classList.add('animation-class');
             setTimeout(() => {
-                question.textContent = 'Will you marry me?';
-                yesBtn.textContent = 'Yes';
-                noBtn.textContent = 'No';
-            }, 3000); 
+                question.textContent = 'WILL YOU MARRY ME?';
+                question.classList.add('animation-class');
+                yesBtn.textContent = 'Yes'; // Changed from 'Yes, I will' to 'Yes'
+                heartImage.src = 'ring.webp'; // Replace with the path to your png image
+            }, 5000);
         });
 
         noBtn.addEventListener('mouseover', () => {
@@ -41,12 +47,13 @@
         });
 
         noBtn.addEventListener('click', () => {
-            question.textContent = 'I LOVE YOU TOO !'; // Changed from innerHTML to textContent
+            question.textContent = 'I LOVE YOU TOO !';
             setTimeout(() => {
-                question.textContent = 'Will you marry me?';
-                yesBtn.textContent = 'Yes';
+                question.textContent = 'WILL YOU MARRY ME?';
+                question.classList.add('animation-class');
+                yesBtn.textContent = 'Yes'; // Changed from 'Yes, I will' to 'Yes'
                 noBtn.textContent = 'No';
-            }, 3000); 
+            }, 5000);
         });
     </script>
 </body>

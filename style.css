@@ -80,3 +80,15 @@ button:nth-child(2){
 .gif-image {
     display: none;
 }
+.animation-class {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
